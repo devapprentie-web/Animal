@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvre les animaux du monde entier et apprends-en plus sur leurs habitudes, leur habitat et leur alimentation.">
+    <meta name="keywords" content="animaux, découverte, nature, faune, flore, habitat, alimentation,">
+    <meta name="author" content="Animalia Team">
+    <title>Animalia - Découvre les animaux</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+        <span>🐾</span> Animalia
+    </div>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#decouvrir">Découvrir</a>
+        <a href="#a-propos">À propos</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <span class="badge">🌍 Explore le monde animal</span>
+
+            <h1>
+                Découvre un animal<br>
+                <span>en quelques secondes.</span>
+            </h1>
+
+            <p>
+                Recherche un animal et découvre son histoire,
+                son habitat, son alimentation et bien plus encore.
+            </p>
+
+            <form id="searchForm" class="search-box">
+                <input
+                    type="text"
+                    id="animalInput"
+                    placeholder="Ex : lion, éléphant, tigre..."
+                    autocomplete="off"
+                >
+                <button type="submit">
+                    🔍 Rechercher
+                </button>
+            </form>
+
+            <div class="suggestions">
+                <span>Essayez :</span>
+                <button class="suggestion">Lion</button>
+                <button class="suggestion">Éléphant</button>
+                <button class="suggestion">Tigre</button>
+                <button class="suggestion">Panda</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-section" id="decouvrir">
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Recherche de l'animal...</p>
+        </div>
+
+        <div id="error" class="error hidden">
+            <div class="error-icon">😕</div>
+            <h2>Animal introuvable</h2>
+            <p>
+                Nous n'avons pas trouvé cet animal.
+                Vérifie l'orthographe et réessaie.
+            </p>
+        </div>
+
+        <article id="animalCard" class="animal-card hidden">
+
+            <div class="animal-image-container">
+                <img id="animalImage" src="" alt="Animal">
+                <span id="animalCategory" class="animal-category">
+                    🐾 Animal
+                </span>
+            </div>
+
+            <div class="animal-content">
+
+                <span class="small-title">FICHE ANIMALE</span>
+
+                <h2 id="animalName">Lion</h2>
+
+                <p id="scientificName" class="scientific-name">
+                    Panthera leo
+                </p>
+
+                <p id="animalDescription" class="description">
+                    Description de l'animal...
+                </p>
+
+                <div class="info-grid">
+
+                    <div class="info-box">
+                        <span class="info-icon">🌍</span>
+                        <div>
+                            <small>Habitat</small>
+                            <strong id="habitat">À découvrir</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-icon">🍖</span>
+                        <div>
+                            <small>Alimentation</small>
+                            <strong id="food">À découvrir</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-icon">📏</span>
+                        <div>
+                            <small>Catégorie</small>
+                            <strong id="type">Animal</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-icon">🔬</span>
+                        <div>
+                            <small>Classification</small>
+                            <strong id="classification">À découvrir</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="fact-box">
+                    <span>💡</span>
+                    <div>
+                        <strong>Le savais-tu ?</strong>
+                        <p id="funFact">
+                            Découvre une information intéressante sur cet animal.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="favoriteBtn" class="favorite-btn">
+                        🤍 Ajouter aux favoris
+                    </button>
+
+                    <a
+                        id="wikiLink"
+                        href="#"
+                        target="_blank"
+                        class="wiki-btn"
+                    >
+                        En savoir plus →
+                    </a>
+                </div>
+
+            </div>
+        </article>
+
+    </section>
+
+    <section class="popular-section">
+        <div class="section-title">
+            <span>🐾 À EXPLORER</span>
+            <h2>Animaux populaires</h2>
+            <p>Choisis un animal pour commencer ton exploration.</p>
+        </div>
+
+        <div class="animals-grid">
+
+            <button class="popular-card" data-animal="Lion">
+                <div class="popular-emoji">🦁</div>
+                <h3>Lion</h3>
+                <p>Le roi des animaux</p>
+            </button>
+
+            <button class="popular-card" data-animal="Éléphant">
+                <div class="popular-emoji">🐘</div>
+                <h3>Éléphant</h3>
+                <p>Le plus grand animal terrestre</p>
+            </button>
+
+            <button class="popular-card" data-animal="Tigre">
+                <div class="popular-emoji">🐯</div>
+                <h3>Tigre</h3>
+                <p>Un grand félin fascinant</p>
+            </button>
+
+            <button class="popular-card" data-animal="Panda">
+                <div class="popular-emoji">🐼</div>
+                <h3>Panda</h3>
+                <p>Le spécialiste du bambou</p>
+            </button>
+
+            <button class="popular-card" data-animal="Girafe">
+                <div class="popular-emoji">🦒</div>
+                <h3>Girafe</h3>
+                <p>Le plus grand animal terrestre</p>
+            </button>
+
+            <button class="popular-card" data-animal="Dauphin">
+                <div class="popular-emoji">🐬</div>
+                <h3>Dauphin</h3>
+                <p>Un mammifère marin intelligent</p>
+            </button>
+
+        </div>
+    </section>
+
+    <section class="about-section" id="a-propos">
+        <div class="about-content">
+            <span>🌎 NOTRE MISSION</span>
+            <h2>Apprendre sur les animaux n'a jamais été aussi simple.</h2>
+            <p>
+                Animalia permet à chacun de découvrir facilement
+                les animaux qui peuplent notre planète.
+                Recherche, explore et apprends à ton rythme.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-logo">🐾 Animalia</div>
+    <p>Explore le monde animal, un animal à la fois.</p>
+    <span>© 2026 Animalia</span>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
